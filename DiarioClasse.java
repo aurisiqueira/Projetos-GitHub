@@ -79,20 +79,20 @@ public class DiarioClasse{
                         if(numero_mes ==1 || numero_mes==3 || numero_mes==5 || numero_mes==7 || numero_mes == 8  || numero_mes == 10 || numero_mes == 12){
                             if(calendario[k][x] <32){
                             System.out.print("Dia "+calendario[k][x] + ":");
-                            status[k][x] = input.nextLine();
+                            status[k][x] = input.next();
                             }
                         }
                         else if(numero_mes==4 || numero_mes==6 || numero_mes==9 || numero_mes == 11){ 
                             if(calendario[k][x] <31){
                                 System.out.print("Dia "+calendario[k][x] + ":");
-                                status[k][x] = input.nextLine();
+                                status[k][x] = input.next();
                             }
                         } 
                         
                         else if(numero_mes==2){ 
                             if(calendario[k][x] <29){
                                 System.out.print("Dia "+calendario[k][x] + ":");
-                                status[k][x] = input.nextLine();
+                                status[k][x] = input.next();
                             }
                         }  
                         
@@ -109,7 +109,10 @@ public class DiarioClasse{
                 System.out.println("Aluno: "+alunos[j]);
                 for(int i=0; i<calendario.length; i++){
                     for (int x=0; x<calendario[i].length; x++){
-                        System.out.print("Dia "+calendario[i][x] + " ("+status[i][x]+")    ");
+                        if (status[i][x] != null){
+
+                            System.out.print("Dia "+calendario[i][x] + " ("+status[i][x]+")    ");
+                        }
                         
                     }
                     System.out.println(" ");

@@ -6,20 +6,11 @@ public class DiarioClasse{
         int[][] calendario = new int[5][7];
         int dia = 0;
         int num_alunos;
+        int num_mes;
         String[][] status = new String[5][7];
-        String[] mes = new String[12];
-        mes[0] = "Janeiro";
-        mes[1] = "Fevereiro";
-        mes[2] = "Março";
-        mes[3] = "Abril";
-        mes[4] = "Maio";
-        mes[5] = "Junho";
-        mes[6] = "Julho";
-        mes[7] = "Agosto";
-        mes[8] = "Setembro";
-        mes[9] = "Outubro";
-        mes[10] = "Novembro";
-        mes[11] = "Dezembro";
+        
+
+        
     
         Scanner input = new Scanner(System.in);
     
@@ -35,25 +26,13 @@ public class DiarioClasse{
             alunos[i] = input.next();
             
         }
-    
-        System.out.println("");
-        System.out.println("01 ----- Janeiro");
-        System.out.println("02 ----- Fevereiro");
-        System.out.println("03 ----- Março");
-        System.out.println("04 ----- Abril");
-        System.out.println("05------ Maio");
-        System.out.println("01 ----- Junho");
-        System.out.println("07 ----- Julho");
-        System.out.println("08 ----- Agosto");
-        System.out.println("09 ----- Setembro");
-        System.out.println("10 ----- Outubro");
-        System.out.println("11 ----- Novembro");
-        System.out.println("12 ----- Dezembro");
-        System.out.println("");
-        System.out.print("Infome o número do mês: ");
-        int numero_mes = input.nextInt();
-        System.out.println("");
-        System.out.println("Mês selecionado --> "+mes[numero_mes-1]);
+
+        ObjetoDiario diario = new ObjetoDiario();
+        diario.setSelecionarMes();
+        num_mes = diario.getSelecionarMes();
+
+        
+        //System.out.println("Mês selecionado --> "+mes[num_mes-1]);
     
             
             
@@ -76,20 +55,20 @@ public class DiarioClasse{
                 System.out.println("Aluno: "+alunos[j]);
                 for(int k=0; k<calendario.length; k++){
                     for (int x=0; x<calendario[k].length; x++){
-                        if(numero_mes ==1 || numero_mes==3 || numero_mes==5 || numero_mes==7 || numero_mes == 8  || numero_mes == 10 || numero_mes == 12){
+                        if(num_mes ==1 || num_mes==3 || num_mes==5 || num_mes==7 || num_mes == 8  || num_mes == 10 || num_mes == 12){
                             if(calendario[k][x] <32){
                             System.out.print("Dia "+calendario[k][x] + ":");
                             status[k][x] = input.next();
                             }
                         }
-                        else if(numero_mes==4 || numero_mes==6 || numero_mes==9 || numero_mes == 11){ 
+                        else if(num_mes==4 || num_mes==6 || num_mes==9 || num_mes == 11){ 
                             if(calendario[k][x] <31){
                                 System.out.print("Dia "+calendario[k][x] + ":");
                                 status[k][x] = input.next();
                             }
                         } 
                         
-                        else if(numero_mes==2){ 
+                        else if(num_mes==2){ 
                             if(calendario[k][x] <29){
                                 System.out.print("Dia "+calendario[k][x] + ":");
                                 status[k][x] = input.next();

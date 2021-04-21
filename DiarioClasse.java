@@ -7,7 +7,7 @@ public class DiarioClasse{
         int dia = 0;
         int num_alunos;
         int num_mes;
-        String[][] status = new String[5][7];
+        
 
         ObjetoDiario diario = new ObjetoDiario();
         
@@ -16,14 +16,17 @@ public class DiarioClasse{
         System.out.println("|        Diário de Classe         |");
         System.out.println("Quantidade de alunos na turma: ");
         num_alunos = input.nextInt();
+        input.nextLine();
         String[] alunos = new String[num_alunos];
 
         System.out.println("");
 
+        String[][][] status = new String[num_alunos][5][7];
+
         System.out.println("|        Nome dos alunos:        |");
         for(int i=0; i<alunos.length; i++){
             System.out.println("Aluno "+(i+1)+": ");
-            alunos[i] = input.next();
+            alunos[i] = input.nextLine();
             
         }
 
@@ -51,21 +54,21 @@ public class DiarioClasse{
                     if(num_mes ==1 || num_mes==3 || num_mes==5 || num_mes==7 || num_mes == 8  || num_mes == 10 || num_mes == 12){
                         if(calendario[k][x] <32){
                          System.out.print("Dia "+calendario[k][x] + ":");
-                         status[k][x] = input.next();
+                         status[j][k][x] = input.next();
                          }
                     }
 
                     else if(num_mes==4 || num_mes==6 || num_mes==9 || num_mes == 11){ 
                         if(calendario[k][x] <31){
                             System.out.print("Dia "+calendario[k][x] + ":");
-                            status[k][x] = input.next();
+                            status[j][k][x] = input.next();
                         }
                     } 
                         
                     else if(num_mes==2){ 
                         if(calendario[k][x] <29){
                             System.out.print("Dia "+calendario[k][x] + ":");
-                            status[k][x] = input.next();
+                            status[j][k][x] = input.next();
                         }
                     }  
                                   
@@ -81,9 +84,9 @@ public class DiarioClasse{
             System.out.println("Aluno: "+alunos[j]);
             for(int i=0; i<calendario.length; i++){
                 for (int x=0; x<calendario[i].length; x++){
-                     if (status[i][x] != null){
+                     if (status[j][i][x] != null){
 
-                        System.out.print("Dia "+calendario[i][x] + " ("+status[i][x]+")    ");
+                        System.out.print("Dia "+calendario[i][x] + " ("+status[j][i][x]+")    ");
                     }
                         
                 }
